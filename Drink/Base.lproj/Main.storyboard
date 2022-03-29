@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -41,6 +42,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GQM-Jh-fzU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-217" y="-27"/>
+        </scene>
+        <!--Add Alert View Controller-->
+        <scene sceneID="bOp-m6-n7D">
+            <objects>
+                <viewController storyboardIdentifier="AddAlertViewController" id="wFj-nt-heq" customClass="AddAlertViewController" customModule="Drink" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VIt-cU-0S5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TOP-r3-cnK">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="알람추가" id="WWb-7H-LLB">
+                                        <barButtonItem key="leftBarButtonItem" title="취소" id="dXD-SD-URf">
+                                            <connections>
+                                                <action selector="dismissButtonTapped:" destination="wFj-nt-heq" id="KTo-HO-RsT"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="저장" id="M1A-rI-F1w">
+                                            <connections>
+                                                <action selector="saveButtonTapped:" destination="wFj-nt-heq" id="JZ9-sY-0aH"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfN-m4-cMq">
+                                <rect key="frame" x="20" y="168" width="30" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="VgC-S7-DgJ">
+                                <rect key="frame" x="201" y="153.5" width="193" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="193" id="2Pz-kE-lrJ"/>
+                                    <constraint firstAttribute="height" constant="50" id="XZw-RU-10m"/>
+                                </constraints>
+                                <locale key="locale" localeIdentifier="ko_KR"/>
+                            </datePicker>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PNF-bb-3ve"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TOP-r3-cnK" firstAttribute="trailing" secondItem="PNF-bb-3ve" secondAttribute="trailing" id="0iW-CD-Pa4"/>
+                            <constraint firstItem="TOP-r3-cnK" firstAttribute="top" secondItem="PNF-bb-3ve" secondAttribute="top" id="4rH-RA-fBG"/>
+                            <constraint firstItem="xfN-m4-cMq" firstAttribute="leading" secondItem="PNF-bb-3ve" secondAttribute="leading" constant="20" id="CNn-Mp-VuL"/>
+                            <constraint firstItem="VgC-S7-DgJ" firstAttribute="centerY" secondItem="xfN-m4-cMq" secondAttribute="centerY" id="UP8-Cx-yRo"/>
+                            <constraint firstItem="PNF-bb-3ve" firstAttribute="trailing" secondItem="VgC-S7-DgJ" secondAttribute="trailing" constant="20" id="fF5-KH-YJ1"/>
+                            <constraint firstItem="xfN-m4-cMq" firstAttribute="top" secondItem="TOP-r3-cnK" secondAttribute="bottom" constant="80" id="qqD-yJ-mFL"/>
+                            <constraint firstItem="TOP-r3-cnK" firstAttribute="leading" secondItem="PNF-bb-3ve" secondAttribute="leading" id="yKA-lC-Nl5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="datePiker" destination="VgC-S7-DgJ" id="3tQ-dc-548"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ADd-4q-iPa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="690" y="-27"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zNb-SP-Qz9">
